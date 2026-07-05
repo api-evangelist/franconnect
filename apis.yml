@@ -1,0 +1,136 @@
+aid: franconnect
+url: https://raw.githubusercontent.com/api-evangelist/franconnect/refs/heads/main/apis.yml
+name: FranConnect
+kind: company
+description: FranConnect is a franchise and multi-location management platform used
+  by 1,500+ brands across roughly one million locations, covering franchise
+  development and sales, franchisee/unit information management, field operations
+  and audits, financials and royalties, and CRM. Its FranConnect Sky product
+  exposes a RESTful API - organized by module (Franchise Sales "fs", CRM "cm", Info
+  Manager "fim", Finance "manage-finance", and Admin "admin") - that lets customers
+  import and export data between FranConnect Sky and third-party applications. All
+  API calls are made over HTTPS and authenticated with an Authorization-Token
+  header. API access is not open/self-serve - it is gated behind a FranConnect Sky
+  customer or partner account, with credentials provisioned by FranConnect, and the
+  reference documentation portal (docs.franconnect.net) requires a signed-in
+  account.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Franchise Management
+- Franchise Development
+- Franchise Operations
+- Field Operations
+- Multi-Location
+- CRM
+- Franchise Sales
+- SaaS
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: franconnect:franconnect-franchise-sales-api
+  name: FranConnect Franchise Sales API
+  tags:
+  - Franchise Sales
+  - Franchise Development
+  - Leads
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.franconnect.net/
+  baseURL: https://{tenant}.franconnect.net
+  properties:
+  - url: https://docs.franconnect.net/
+    type: Documentation
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+  description: Franchise Sales / Development module (path segment "fs"). Import and
+    export franchise development leads, prospects, and the franchise sales pipeline
+    used to recruit and qualify new franchisees. Exact endpoint paths are modeled
+    from FranConnect's published module structure - the detailed reference is behind
+    the gated docs.franconnect.net portal.
+- aid: franconnect:franconnect-crm-api
+  name: FranConnect CRM API
+  tags:
+  - CRM
+  - Contacts
+  - Communications
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.franconnect.net/
+  baseURL: https://{tenant}.franconnect.net
+  properties:
+  - url: https://docs.franconnect.net/
+    type: Documentation
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+  description: CRM module (path segment "cm"). Read and write contacts and
+    relationship/communication records that support franchise and consumer
+    engagement. Endpoint paths are modeled from the published module structure; the
+    detailed reference requires a signed-in FranConnect account.
+- aid: franconnect:franconnect-info-manager-api
+  name: FranConnect Info Manager API
+  tags:
+  - Franchisees
+  - Units
+  - Documents
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.franconnect.net/
+  baseURL: https://{tenant}.franconnect.net
+  properties:
+  - url: https://docs.franconnect.net/
+    type: Documentation
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+  description: Info Manager module (path segment "fim"). The system of record for
+    franchisee and unit/location profiles, plus document retrieval - recent releases
+    added dedicated REST endpoints for programmatic access to stored files and their
+    metadata. Endpoint paths are modeled; the detailed reference is gated behind
+    docs.franconnect.net.
+- aid: franconnect:franconnect-finance-api
+  name: FranConnect Finance API
+  tags:
+  - Financials
+  - Royalties
+  - Invoices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.franconnect.net/
+  baseURL: https://{tenant}.franconnect.net
+  properties:
+  - url: https://docs.franconnect.net/
+    type: Documentation
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+  description: Finance module (path segment "manage-finance"). Import and export
+    financial data - unit sales reporting, royalties, fees, and invoicing used to
+    calculate and reconcile franchisee obligations. Endpoint paths are modeled from
+    the published module structure; detailed reference requires account access.
+- aid: franconnect:franconnect-admin-api
+  name: FranConnect Admin API
+  tags:
+  - Admin
+  - Users
+  - Configuration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.franconnect.net/
+  baseURL: https://{tenant}.franconnect.net
+  properties:
+  - url: https://docs.franconnect.net/
+    type: Documentation
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+  description: Admin module (path segment "admin"). Administrative entities such as
+    users, roles, and configuration that govern the FranConnect Sky tenant.
+    Endpoint paths are modeled from the published module structure; the detailed
+    reference is behind the gated documentation portal.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/franconnect
+- type: Website
+  url: https://www.franconnect.com/en/
+- type: Documentation
+  url: https://docs.franconnect.net/
+- type: Documentation
+  url: https://marketplace.franconnect.net/api-detail.html
+- type: Plans
+  url: plans/franconnect-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

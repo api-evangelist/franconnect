@@ -1,0 +1,63 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: FranConnect
+providerId: franconnect
+created: '2026-07-04'
+modified: '2026-07-04'
+reconciled: false
+tags:
+- Franchise Management
+- Multi-Location
+- SaaS
+- Plans
+description: >-
+  FranConnect does not publish transparent, self-serve pricing. It is sold as an
+  enterprise franchise/multi-location management platform via a sales-led motion:
+  prospects request a demo and receive a customized quote. Third-party software
+  directories report pricing that starts around $49 per user per month, with
+  typical monthly subscriptions ranging roughly $1,000-$2,000/month depending on
+  brand size, modules (Development, Operations, Field Visits, Marketing,
+  Financials, CRM), and number of locations. The API is included as part of a
+  FranConnect Sky subscription for customers/partners rather than sold as a
+  standalone metered product; there is no public API-usage price list.
+notes: >-
+  Figures are from third-party software directories (Software Finder,
+  SoftwareSuggest, Capterra) and are NOT confirmed by FranConnect. Actual pricing
+  is quote-based. Verify current terms directly with FranConnect sales during
+  reconciliation. No public per-call or per-record API pricing is documented.
+sources:
+- https://www.franconnect.com/en/
+- https://marketplace.franconnect.net/api-detail.html
+- https://softwarefinder.com/crm/franconnect
+- https://www.softwaresuggest.com/fran-connect
+plans:
+- id: franconnect-demo-quote
+  name: Custom Quote (Sales-Led)
+  type: enterprise
+  description: >-
+    FranConnect is sold via demo and a customized quote. Pricing depends on
+    brand size, selected modules, and number of franchise/multi-location units.
+    Third-party directories report a starting point near $49/user/month and
+    common monthly subscriptions in the ~$1,000-$2,000/month range; these are
+    unconfirmed by FranConnect. API access is included with a FranConnect Sky
+    subscription for eligible customers and partners.
+  entries:
+  - label: Customized Subscription
+    name: custom_subscription
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: contact sales (custom quote)
+    userMultiplied: false
+  elements:
+  - name: FranConnect Sky Platform
+  - name: Selectable Modules (Development, Operations, Field Visits, Marketing, Financials, CRM)
+  - name: REST API Access (Authorization-Token)
+  - name: Onboarding and Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

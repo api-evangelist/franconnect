@@ -1,0 +1,97 @@
+aid: franconnect
+name: FranConnect
+review:
+  question: Does FranConnect expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. FranConnect Sky's documented API surface
+    is a RESTful, request/response HTTP API used to import and export data
+    between FranConnect Sky and third-party applications. No server-push
+    transport (WebSocket or SSE) is documented on FranConnect's own API, so
+    there is nothing to model in AsyncAPI. FranConnect's API reference is also
+    gated behind a signed-in customer/partner account, which further limits any
+    public transport claims.
+findings:
+  summary: |
+    FranConnect does not publish a documented public WebSocket API. FranConnect
+    Sky offers a RESTful API for franchise and multi-location management,
+    organized by module - Franchise Sales (fs), CRM (cm), Info Manager (fim),
+    Finance (manage-finance), and Admin (admin). All interactions are made over
+    HTTPS and authenticated with an Authorization-Token HTTP header. The API is
+    request/response REST; no realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented on FranConnect's own API.
+  accessModel: |
+    The API is real and documented but NOT open/self-serve. Access is gated
+    behind a FranConnect Sky customer or integration-partner account.
+    Credentials (the Authorization-Token) are provisioned by FranConnect via a
+    REST API account creation process in the FranConnect help center. The
+    detailed reference portal at docs.franconnect.net requires a signed-in
+    account; the public marketplace listing at
+    marketplace.franconnect.net/api-detail.html describes the API at a high
+    level. FranConnect Sky is multi-tenant SaaS, so base URLs are
+    tenant-specific.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    Because the endpoint-level reference documentation is gated behind a signed-in
+    account, the per-module logical APIs in apis.yml are described from
+    FranConnect's publicly stated module structure (fs / cm / fim /
+    manage-finance / admin). Exact endpoint paths, request/response schemas, and
+    parameters are MODELED, not transcribed from a public OpenAPI definition. No
+    OpenAPI file, Postman collection, or fabricated endpoint surface is asserted
+    in this entry.
+  authentication: |
+    Custom HTTP header "Authorization-Token" on every HTTPS request. Access is
+    provisioned per tenant. A separate OAuth client integration is also
+    referenced in FranConnect's internal/customer documentation for certain
+    integrations.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://{tenant}.franconnect.net
+      documented: true
+      note: RESTful import/export API across the fs, cm, fim, manage-finance, and admin modules. Tenant-specific base URL. Reference portal is gated.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in FranConnect's public materials as of the review date.
+  modules:
+    - code: fs
+      name: Franchise Sales / Development
+      note: Franchise development leads, prospects, and franchise sales pipeline.
+    - code: cm
+      name: CRM
+      note: Contacts and relationship/communication records.
+    - code: fim
+      name: Info Manager
+      note: Franchisee and unit/location records plus document retrieval (files and metadata).
+    - code: manage-finance
+      name: Finance
+      note: Unit sales reporting, royalties, fees, and invoicing.
+    - code: admin
+      name: Admin
+      note: Users, roles, and tenant configuration.
+sources:
+  - url: https://marketplace.franconnect.net/api-detail.html
+    type: APIReference
+    note: Public marketplace listing; states the API grants access to Finance (manage-finance), Sales (fs), Info Manager (fim), CRM (cm), and Admin (admin) modules and enables import/export with third-party apps.
+  - url: https://docs.franconnect.net/
+    type: Documentation
+    note: FranConnect API reference portal. Confirms RESTful API, HTTPS-only, and the Authorization-Token header. Detailed content is gated behind a signed-in account.
+  - url: https://help.franconnect.com/hc/en-us
+    type: Documentation
+    note: FranConnect help center; includes a REST API Account Creation Guide and SDK/release notes. Article pages returned 403 to anonymous fetch (gated).
+  - url: https://www.franconnect.com/en/
+    type: Website
+    note: Product marketing; franchise/multi-location platform, 1,500+ brands, ~1M locations, modules for Development, Operations, Field Visits, Marketing, Financials.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and FranConnect's own documented API
+    is request/response REST gated behind a customer/partner account. No
+    AsyncAPI document was created because there is no server-push transport on
+    FranConnect's own API to model. Endpoints are modeled from the public module
+    structure rather than fabricated from a private reference.
