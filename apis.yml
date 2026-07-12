@@ -121,6 +121,12 @@ apis:
     Endpoint paths are modeled from the published module structure; the detailed
     reference is behind the gated documentation portal.
 common:
+- type: TrustCenter
+  url: security/franconnect-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/franconnect-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/franconnect-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/franconnect
 - type: Website
