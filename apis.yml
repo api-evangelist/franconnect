@@ -35,6 +35,15 @@ tags:
 - Multi-Location
 - CRM
 - Franchise Sales
+- Software-as-a-Service
+tags_raw:
+- Franchise Management
+- Franchise Development
+- Franchise Operations
+- Field Operations
+- Multi-Location
+- CRM
+- Franchise Sales
 - SaaS
 created: '2026-07-04'
 modified: '2026-07-04'
@@ -117,6 +126,10 @@ apis:
 - aid: franconnect:franconnect-admin-api
   name: FranConnect Admin API
   tags:
+  - Admin
+  - User
+  - Configuration
+  tags_raw:
   - Admin
   - Users
   - Configuration
