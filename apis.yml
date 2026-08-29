@@ -14,6 +14,17 @@ description: FranConnect is a franchise and multi-location management platform u
   customer or partner account, with credentials provisioned by FranConnect, and the
   reference documentation portal (docs.franconnect.net) requires a signed-in
   account.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: approval
