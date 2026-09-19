@@ -119,6 +119,10 @@ apis:
 - aid: franconnect:franconnect-finance-api
   name: FranConnect Finance API
   tags:
+  - Financial
+  - Royalties
+  - Invoices
+  tags_raw:
   - Financials
   - Royalties
   - Invoices
