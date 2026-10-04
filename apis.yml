@@ -38,6 +38,10 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/franconnect.png
+x-docs-platform: redocly
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
+x-docs-hosting: aws-cloudfront
 tags:
 - Franchise Management
 - Franchise Development
@@ -119,13 +123,14 @@ apis:
 - aid: franconnect:franconnect-finance-api
   name: FranConnect Finance API
   tags:
-  - Financial
+  - Finance
   - Royalties
   - Invoices
   tags_raw:
   - Financials
   - Royalties
   - Invoices
+  - Financial
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.franconnect.net/
   baseURL: https://{tenant}.franconnect.net
