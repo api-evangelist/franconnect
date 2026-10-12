@@ -1,0 +1,22 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/franconnect/integrations
+checked:
+- https://composio.dev/toolkits/franconnect
+- https://monid.ai/tools/franconnect
+- https://n8n.io/integrations/franconnect/
+- https://zapier.com/apps/franconnect/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: franconnect
+  url: https://zapier.com/apps/franconnect/integrations
+  external_url: http://franconnect.com/
+  partner_tier: null
+  triggers: []
+  actions: []
+  searches: []
+edges: []
+templates: []
